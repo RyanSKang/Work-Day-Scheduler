@@ -22,7 +22,7 @@
 // TODO: Add code to display the current date in the header of the page.
 $(document).ready(function(){
   var currentTime= $('#currentDay');
-  var date= dayjs().format('MM/DD/YYYY, hh:mm');
+  var date= dayjs().format('MM/DD/YYYY, h:mm');
   currentTime.text(date);
 
   // Make logic for saveBtn
@@ -43,6 +43,28 @@ $(document).ready(function(){
       var task=localStorage.getItem(i);
       $('#' + i + '').text(task);
     }
+}
+
+// Color coding TimeSlots for past present and future
+// 1. need to create current time to only display hour so i can make if statement with
+// container ID to compare with hour
+// 2. need to create if statements to see what the container will be 
+// based on condition
+// 3. need to call ID of a container in order to see which container is affected
+
+colorCode()
+function colorCode(){
+  var timeSlot=$('.time-block');
+  var time=dayjs().hour();
+  // for(var i=9; i<18; i++){
+  //  var container= $('#' + i)
+
+  if(container==time){
+
+  }
+
+}
+
 }
 })
 
