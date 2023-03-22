@@ -22,7 +22,7 @@
 // TODO: Add code to display the current date in the header of the page.
 $(document).ready(function(){
   var currentTime= $('#currentDay');
-  var date= dayjs().format('MM/DD/YYYY, H:mm');
+  var date= dayjs().format('MM/DD/YYYY, hh:mm a');
   currentTime.text(date);
 
   // Make logic for saveBtn
@@ -39,7 +39,7 @@ $(document).ready(function(){
   // Show saved Task logic
   retrieveTask()
   function retrieveTask(){
-    for(var i=9; i<18; i++){
+    for(var i=9; i<19; i++){
       var task=localStorage.getItem(i);
       $('#' + i + '').text(task);
     }
@@ -54,28 +54,23 @@ $(document).ready(function(){
 
 colorCode()
 function colorCode(){
-  var timeSlot=$('.time-block');
   var time=dayjs().hour();
-  var container
-  
-  // for(var i=9; i<19; i++){}
-  // var container= $(this).parent('#')
-  // console.log(container);
-  // if(container==time){
-  //   timeSlot.addClass('.present');
-  //   timeSlot.removeClass('.time-block');
-  // } else if (container<time){
-  //   timeSlot.addClass('.past');
-  //   timeSlot.removeClass('.time-block');
-  // } else {
-  //   timeSlot.addClass('.future');
-  //   timeSlot.removeClass('.time-block');
-  // }
-  // }
-}
-})
-
-
-// var timeSlot= $('.description')
-// timeSlot.each(function(){
-//   var hour= $(this).attr('id');
+  $(".time-block").each(function(){
+    var blockHour= parseInt($(this).attr("id").split("-")[1]);
+    console.log(blockHour);
+    console.log(time);
+    // checking if console checks out
+    
+    if(blockHour<time){
+      $(this).addClass('past');
+    } else if (blockHour===time){
+      $(this).removeClass('past');
+      $(this).addClass('present');
+    } else {
+      $(this).addClass('future');
+      $(this).removeClass('present');
+      $(this).removeClass('past')
+    }
+  });
+  }
+});
