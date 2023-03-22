@@ -8,7 +8,7 @@ I am still utilizing CSS to personalize my projects in a way to look different a
 
 No Installation required but you can access my deployed application via this link: 
 
-<a href="https://ryanskang.github.io/APIs-Code-Challenge/" target="_blank">Work Day Scheduler</a>
+<a href="https://ryanskang.github.io/Work-Day-Scheduler/" target="_blank">Work Day Scheduler</a>
 
 ## Usage
 
