@@ -56,15 +56,21 @@ colorCode()
 function colorCode(){
   var timeSlot=$('.time-block');
   var time=dayjs().hour();
-  // for(var i=9; i<18; i++){
-  //  var container= $('#' + i)
-
+  
+  for(var i=9; i<19; i++){
+  var container= $(this).parent('#')
+  console.log(container);
   if(container==time){
-
+    timeSlot.addClass('.present');
+    timeSlot.removeClass('.time-block');
+  } else if (container<time){
+    timeSlot.addClass('.past');
+    timeSlot.removeClass('.time-block');
+  } else {
+    timeSlot.addClass('.future');
+    timeSlot.removeClass('.time-block');
   }
-
-}
-
+  }
 }
 })
 
