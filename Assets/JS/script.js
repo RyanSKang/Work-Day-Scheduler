@@ -22,7 +22,7 @@
 // TODO: Add code to display the current date in the header of the page.
 $(document).ready(function(){
   var currentTime= $('#currentDay');
-  var date= dayjs().format('MM/DD/YYYY, h:mm');
+  var date= dayjs().format('MM/DD/YYYY, H:mm');
   currentTime.text(date);
 
   // Make logic for saveBtn
@@ -56,23 +56,25 @@ colorCode()
 function colorCode(){
   var timeSlot=$('.time-block');
   var time=dayjs().hour();
+  var container
   
-  for(var i=9; i<19; i++){
-  var container= $(this).parent('#')
-  console.log(container);
-  if(container==time){
-    timeSlot.addClass('.present');
-    timeSlot.removeClass('.time-block');
-  } else if (container<time){
-    timeSlot.addClass('.past');
-    timeSlot.removeClass('.time-block');
-  } else {
-    timeSlot.addClass('.future');
-    timeSlot.removeClass('.time-block');
-  }
-  }
+  // for(var i=9; i<19; i++){}
+  // var container= $(this).parent('#')
+  // console.log(container);
+  // if(container==time){
+  //   timeSlot.addClass('.present');
+  //   timeSlot.removeClass('.time-block');
+  // } else if (container<time){
+  //   timeSlot.addClass('.past');
+  //   timeSlot.removeClass('.time-block');
+  // } else {
+  //   timeSlot.addClass('.future');
+  //   timeSlot.removeClass('.time-block');
+  // }
+  // }
 }
 })
+
 
 // var timeSlot= $('.description')
 // timeSlot.each(function(){
